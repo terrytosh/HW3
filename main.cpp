@@ -51,7 +51,7 @@ int main(){
     }
     if(word[0] == letter) {
       if(letter == 'd') {
-        return DogishHelper(word[.substring(1)], 'o');
+        return DogishHelper(word.substring(1), 'o');
       } else if(letter == 'o') {
         return DogishHelper(word.substring(1), 'g');
       } else {
