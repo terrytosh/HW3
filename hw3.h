@@ -3,7 +3,7 @@
 #include <string>
 
 void ReverseArray(int arr[], int length);
-bool HasBalancedParentheses(std::string statement);
-bool InDogish(std::string statement);
+bool HasBalancedParentheses(std::string str);
+bool InDogish(std::string str);
 
 #endif

@@ -11,11 +11,28 @@ int main(){
 	for (int i = 0; i < n; i++) {
 		std::cout << arr[i] << " ";
 	}
+  std::cout << std::endl;
+
+  int arr2[] = { 1, 2, 3, 4, 5, 6 };
+	ReverseArray(arr2, 6);
+
+  for (int i = 0; i < 6; i++) {
+		std::cout << arr2[i] << " ";
+	}
+  std::cout << std::endl;
 
 //Test HasBalancedParentheses();
  std::string statement1 = "((())())";
  if(HasBalancedParentheses(statement1)){
-   	std::cout << "Is it Ballanced: " << std::endl;
+   	std::cout << "balanced: " << std::endl;
+ }
+
+ std::string str = ")()(";
+ if(HasBalancedParentheses(str)){
+   std::cout << "balanced" << std::endl;
+ }
+ else{
+   std::cout << "not balanced" << std::endl;
  }
 
 // Test InDogish();
@@ -34,7 +51,7 @@ int main(){
     }
     if(word[0] == letter) {
       if(letter == 'd') {
-        return DogishHelper(word[.substring(1)], 'o');
+        return DogishHelper(word.substring(1), 'o');
       } else if(letter == 'o') {
         return DogishHelper(word.substring(1), 'g');
       } else {
