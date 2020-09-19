@@ -27,7 +27,7 @@ int main(){
    	std::cout << "balanced: " << std::endl;
  }
 
- std::string str = "(";
+ std::string str = ")()(";
  if(HasBalancedParentheses(str)){
    std::cout << "balanced" << std::endl;
  }

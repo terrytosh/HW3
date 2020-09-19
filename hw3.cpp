@@ -21,7 +21,7 @@ void ReverseArray(int arr[], int length){
 
 bool HasBalancedParentheses(std::string str){
   int ctr = 0;
-  bool flag;
+  bool flag = true;
 
   for(int i = 0; i < str.length(); i++){
     if(str[i] == '('){
@@ -36,12 +36,10 @@ bool HasBalancedParentheses(std::string str){
     }
   }
 
-  if(ctr != 0){
+  if(ctr > 0){
     flag = false;
   }
-  else{
-    flag = true;
-  }
+  
   return flag;
 }
 
