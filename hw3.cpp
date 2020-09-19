@@ -5,7 +5,6 @@ ReverseArray():
 *
 */
 #include <iostream>
-#include <string>
 #include "hw3.h"
 using std::cout;
 using std::endl;
@@ -20,10 +19,22 @@ void ReverseArray(int arr[], int length){
     }
 }
 
-bool HasBalancedParentheses(std::string statement){
-  return 0;
+bool HasBalancedParentheses(std::string str){
+  int ctr = 0;
+  for(int i = 0; i < str.length(); i++){
+    if(str[i] == '('){
+      ctr++;
+    }
+    else if(str[i] == ')'){
+      if(ctr < 1){
+        return false;
+      }
+    ctr--;
+    }
+  }
+  return true;
 }
 
-bool InDogish(std::string statement){
+bool InDogish(std::string str){
   return 0;
 }
