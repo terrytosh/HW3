@@ -23,12 +23,17 @@ by 1 and continue.
 Then, test for any open parentheses without a matching
 closing parentheses by (ctr > 0). If true, set flag to
 false. Return flag.
+
+InDogish():
 *
 */
 #include <iostream>
+#include <string.h>
 #include "hw3.h"
 using std::cout;
 using std::endl;
+
+bool DogishHelper( std::string word, char letter);
 
 //length should be passed as a parameter so we
 //have the number of elements in the array
@@ -66,7 +71,29 @@ bool HasBalancedParentheses(std::string str){
   return flag;
 }
 
-bool InDogish(std::string str){
-  
-  return 0;
+bool InDogish(std::string word){
+  std::string dog = "dog";
+  for(int i = 0; i < 3; i++){
+    return DogishHelper(word, dog[i]);
+  }
+}
+
+bool DogishHelper( std::string word, char letter){
+  if(word == ""){
+    return false;
+  }
+  if(word[0] == letter){
+    if(letter == 'd'){
+      return DogishHelper(word.substr(1), 'o');
+    } 
+    else if(letter == 'o'){
+      return DogishHelper(word.substr(1), 'g');
+    } 
+    else{
+      return true;
+    }
+  } 
+  else{
+    return DogishHelper(word.substr(1), letter);
+  }
 }
