@@ -45,6 +45,12 @@ int main(){
  }
 
  // Test bool InXish(sting mytext, sting myword);
+ if(InXish("abcdefg", "cf")){
+   std::cout << "in xish" << std::endl;
+ }
+ else{
+   std::cout << "not xish" << std::endl;
+ }
 
 }
 /*

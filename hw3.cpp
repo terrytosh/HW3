@@ -25,6 +25,18 @@ closing parentheses by (ctr > 0). If true, set flag to
 false. Return flag.
 
 InDogish():
+Check base case if word == "", return false
+Compare first char in word to letter parameter,
+if they are equal, check which letter it matches in
+the key. If letter == 'd' return DogishHelper using
+the substring of word from 1 to 'o' and char 'o'.
+If letter == 'o' return DogishHelper using
+the substring of word from 1 to 'g', else 
+return true.
+Else if the current char != letter return
+DogishHelper() using the substring of word from
+1 to letter.
+
 *
 */
 #include <iostream>
@@ -75,7 +87,7 @@ bool HasBalancedParentheses(std::string str){
 bool InDogish(std::string word){
   return DogishHelper(word, 'd');
 }
-/*
+
 bool InXish(std::string word, std::string input){
   if(word.length() < input.length()){
     return false;
@@ -84,7 +96,7 @@ bool InXish(std::string word, std::string input){
     return InXishHelper(word, input[i]);
   }
 }
-*/
+
 bool DogishHelper(std::string word, char letter){
   if(word == ""){
     return false;
@@ -104,15 +116,15 @@ bool DogishHelper(std::string word, char letter){
     return DogishHelper(word.substr(1), letter);
   }
 }
-/*
+
 bool InXishHelper(std::string word, char letter){
   if(word == ""){
     return false;
   }
   if(word[0] == letter){
-    
+    return true;
   }
   else{
     return InXishHelper(word.substr(1), letter);
   }
-}*/
+}
