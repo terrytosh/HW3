@@ -36,12 +36,21 @@ int main(){
  }
 
 // Test InDogish();
- std::string mydogs = "dpoags";
+ std::string mydogs = "do";
  if(InDogish(mydogs)){
-   	std::cout << "Part of Dogish? " << std::endl;
+   	std::cout << "in dogish" << std::endl;
+ }
+ else{
+    std::cout << "not dogish" << std::endl;
  }
 
  // Test bool InXish(sting mytext, sting myword);
+ if(InXish("abcdefg", "cf")){
+   std::cout << "in xish" << std::endl;
+ }
+ else{
+   std::cout << "not xish" << std::endl;
+ }
 
 }
 /*
