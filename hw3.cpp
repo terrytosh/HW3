@@ -33,7 +33,8 @@ InDogish():
 using std::cout;
 using std::endl;
 
-bool DogishHelper( std::string word, char letter);
+bool DogishHelper(std::string word, char letter);
+bool InXishHelper(std::string word, char letter);
 
 //length should be passed as a parameter so we
 //have the number of elements in the array
@@ -72,13 +73,19 @@ bool HasBalancedParentheses(std::string str){
 }
 
 bool InDogish(std::string word){
-  std::string dog = "dog";
-  for(int i = 0; i < 3; i++){
-    return DogishHelper(word, dog[i]);
+  return DogishHelper(word, 'd');
+}
+/*
+bool InXish(std::string word, std::string input){
+  if(word.length() < input.length()){
+    return false;
+  }
+  for(int i = 0; i < input.length() - 1; i++){
+    return InXishHelper(word, input[i]);
   }
 }
-
-bool DogishHelper( std::string word, char letter){
+*/
+bool DogishHelper(std::string word, char letter){
   if(word == ""){
     return false;
   }
@@ -97,3 +104,15 @@ bool DogishHelper( std::string word, char letter){
     return DogishHelper(word.substr(1), letter);
   }
 }
+/*
+bool InXishHelper(std::string word, char letter){
+  if(word == ""){
+    return false;
+  }
+  if(word[0] == letter){
+    
+  }
+  else{
+    return InXishHelper(word.substr(1), letter);
+  }
+}*/
